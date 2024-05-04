@@ -19,6 +19,7 @@ import java.net.Proxy;
 @Configuration
 @ComponentScan("org.jxch.capital.stock4j")
 public class Stock4JAutoConfig {
+    public final static String STOCK_API = "CAPITAL_STOCK4J_API";
     public final static String OK_HTTP_CLIENT = "OK_HTTP_CLIENT";
     @Value("${capital.stock4j.web.enable:false}")
     private boolean webEnable;
