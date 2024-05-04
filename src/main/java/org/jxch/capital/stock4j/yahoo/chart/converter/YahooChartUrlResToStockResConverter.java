@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.stream.IntStream;
 
 @Component
-public class YahooChartUrlResToKLineListConverter implements Converter<YahooChartUrlRes, StockRes> {
+public class YahooChartUrlResToStockResConverter implements Converter<YahooChartUrlRes, StockRes> {
 
     @Override
     public StockRes convert(YahooChartUrlRes source) {

@@ -1,11 +1,10 @@
 package org.jxch.capital.stock4j.api;
 
 import org.jxch.capital.stock4j.util.SpringU;
-import org.springframework.core.Ordered;
 
 import java.util.List;
 
-public interface StockApi extends Ordered {
+public interface StockApi {
 
     StockRes query(StockParam param);
 
@@ -22,11 +21,6 @@ public interface StockApi extends Ordered {
 
     default boolean support(StockBatchParam param) {
         return true;
-    }
-
-    @Override
-    default int getOrder() {
-        return 0;
     }
 
 }

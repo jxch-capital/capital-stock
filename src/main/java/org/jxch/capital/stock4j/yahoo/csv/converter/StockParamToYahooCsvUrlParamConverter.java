@@ -1,16 +1,16 @@
-package org.jxch.capital.stock4j.yahoo.chart.converter;
+package org.jxch.capital.stock4j.yahoo.csv.converter;
 
 import org.jxch.capital.stock4j.api.StockParam;
-import org.jxch.capital.stock4j.yahoo.chart.YahooChartUrlParam;
+import org.jxch.capital.stock4j.yahoo.csv.YahooCsvUrlParam;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StockParamToYahooChartUrlParamConverter implements Converter<StockParam, YahooChartUrlParam> {
+public class StockParamToYahooCsvUrlParamConverter implements Converter<StockParam, YahooCsvUrlParam> {
 
     @Override
-    public YahooChartUrlParam convert(StockParam source) {
-        YahooChartUrlParam param = YahooChartUrlParam.builder()
+    public YahooCsvUrlParam convert(StockParam source) {
+        YahooCsvUrlParam param = YahooCsvUrlParam.builder()
                 .code(source.getCode())
                 .start(source.getStart())
                 .end(source.getEnd())

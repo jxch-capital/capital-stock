@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.jxch.capital.stock4j.api.StockParam;
 import org.jxch.capital.stock4j.api.StockRes;
 import org.jxch.capital.stock4j.config.Stock4JAutoConfig;
-import org.jxch.capital.stock4j.yahoo.YahooApi;
+import org.jxch.capital.stock4j.yahoo.csv.YahooCsvApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
@@ -20,7 +20,7 @@ import java.util.Date;
 @ActiveProfiles("test")
 class YahooChartApiTest {
     @Autowired
-    private YahooApi yahooChartApi;
+    private YahooCsvApi yahooChartApi;
 
     @Test
     void query() {
