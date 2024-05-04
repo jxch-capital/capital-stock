@@ -1,0 +1,23 @@
+package org.jxch.capital.stock4j.yahoo;
+
+import org.jxch.capital.stock4j.api.StockParam;
+import org.jxch.capital.stock4j.api.StockRes;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
+public class YahooApi implements YahooStockApi {
+    private final List<YahooStockApi> apis;
+
+    public YahooApi(@Qualifier(YahooConfig.YAHOO_API) List<YahooStockApi> apis) {
+        this.apis = apis;
+    }
+
+    @Override
+    public StockRes query(StockParam param) {
+        return apis.stream().findAny().orElseThrow(() -> new UnsupportedOperationException("没有活动的API")).query(param);
+    }
+
+}
