@@ -1,6 +1,8 @@
 # capital-stock4j-spring-boot-starter
 股票数据通用接口
 
+---
+
 示例
 ```java
     @Autowired
@@ -26,6 +28,15 @@ ${capital.stock4j.proxy.enable:false}
 ${capital.stock4j.proxy.host:localhost}
 ${capital.stock4j.proxy.port:10809}
 ${capital.stock4j.proxy.type:HTTP}
+```
+
+Maven 依赖
+```xml
+<dependency>
+  <groupId>org.jxch.capital</groupId>
+  <artifactId>capital-stock4j-spring-boot-starter</artifactId>
+  <version>3.2.5-SNAPSHOT</version>
+</dependency>
 ```
 
 ---
