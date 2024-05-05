@@ -8,4 +8,5 @@ public enum StockInterval {
     HOUR_4,
     MINUTE_1,
     MINUTE_5,
+    REAL,
 }

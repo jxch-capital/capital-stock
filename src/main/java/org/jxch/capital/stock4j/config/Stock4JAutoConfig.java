@@ -1,5 +1,7 @@
 package org.jxch.capital.stock4j.config;
 
+import cn.hutool.log.LogFactory;
+import cn.hutool.log.level.Level;
 import lombok.Data;
 import okhttp3.OkHttpClient;
 import org.springframework.beans.factory.annotation.Value;
@@ -37,6 +39,7 @@ public class Stock4JAutoConfig {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         if (useProxy) {
             builder.proxy(new Proxy(Proxy.Type.valueOf(proxyType), new InetSocketAddress(proxyHost, proxyPort)));
+            LogFactory.get().log(Level.INFO, "开启 {} 代理 {}:{}", proxyType, proxyHost, proxyPort);
         }
 
         return builder.build();

@@ -7,6 +7,8 @@ import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.jxch.capital.stock4j.api.StockBatchParam;
+import org.jxch.capital.stock4j.api.StockInterval;
 import org.jxch.capital.stock4j.api.StockParam;
 import org.jxch.capital.stock4j.api.StockRes;
 import org.jxch.capital.stock4j.config.Stock4JAutoConfig;
@@ -49,4 +51,13 @@ public class YahooCsvApi implements YahooStockApi {
         return SpringU.convert(downloadStockCsv(csvUrlParam), StockRes.class);
     }
 
+    @Override
+    public boolean support(StockParam param) {
+        return !Objects.equals(param.getInterval(), StockInterval.REAL);
+    }
+
+    @Override
+    public boolean support(StockBatchParam param) {
+        return !Objects.equals(param.getInterval(), StockInterval.REAL);
+    }
 }
