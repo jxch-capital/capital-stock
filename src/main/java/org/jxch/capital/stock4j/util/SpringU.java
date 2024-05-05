@@ -1,5 +1,6 @@
 package org.jxch.capital.stock4j.util;
 
+import org.jxch.capital.stock4j.config.Stock4JAutoConfig;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -14,7 +15,7 @@ public class SpringU implements ApplicationContextAware {
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         context = applicationContext;
-        conversion = context.getBean(ConversionService.class);
+        conversion = context.getBean(Stock4JAutoConfig.STOCK4J_CONVERSION_SERVICE, ConversionService.class);
     }
 
     public static <T, R> R convert(T t, Class<R> r) {
