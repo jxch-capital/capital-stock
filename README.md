@@ -23,11 +23,11 @@
 ```
 
 开启代理
-```
-${capital.stock4j.proxy.enable:false}
-${capital.stock4j.proxy.host:localhost}
-${capital.stock4j.proxy.port:10809}
-${capital.stock4j.proxy.type:HTTP}
+```properties
+capital.stock4j.proxy.enable=false
+capital.stock4j.proxy.host=localhost
+capital.stock4j.proxy.port=10809
+capital.stock4j.proxy.type=HTTP
 ```
 
 Maven 依赖
