@@ -21,4 +21,6 @@ public class StockParam {
     private Date end = Calendar.getInstance().getTime();
     @Builder.Default
     private StockInterval interval = StockInterval.DAY_1;
+    @Builder.Default
+    private StockEX stockEX = StockEX.GLOBAL;
 }
